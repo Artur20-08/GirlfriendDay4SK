@@ -136,7 +136,7 @@
     <div class="envelope" id="envelope">
       <div class="flap"></div>
     </div>
-    <div class="hint">Klik amplop ini ya sayang ✨</div>
+    <div class="hint" id="hint">Klik amplop ini ya sayang ✨</div>
     <div class="letter" id="letter"></div>
     <button id="repeatBtn" style="display:none; margin-top: 1.5em; padding: 0.5em 1em; font-size: 1rem; border: none; border-radius: 10px; background-color: #cdbba7; color: #3c2f2f; cursor: pointer;">
   Ulangi Lagi 💌
@@ -150,6 +150,7 @@
     const envelope = document.getElementById('envelope');
     const letter = document.getElementById('letter');
     const music = document.getElementById('music');
+    const hit = document.getElementById('hint');
 
     const text = `Sayangku...
 
@@ -197,10 +198,14 @@ Note: Terimakasih sudah sabar membaca ya, maaf jahil dikit`;
     }
 
    
-
+let hasOpened = false;
     envelope.addEventListener('click', () => {
       letter.style.opacity = 1;
+      if (hasOpened==false){
       typeWriter();
+      hasOpened = true;
+      }else{
+      
 
       if (music && typeof music.play === 'function') {
         music.play().catch(err => console.warn("Gagal memutar audio:", err));
@@ -216,6 +221,7 @@ Note: Terimakasih sudah sabar membaca ya, maaf jahil dikit`;
         document.body.appendChild(spark);
         setTimeout(() => spark.remove(), 2000);
       }
+    }
     });
 
      const repeatBtn = document.getElementById('repeatBtn');
@@ -225,9 +231,12 @@ Note: Terimakasih sudah sabar membaca ya, maaf jahil dikit`;
   i = 0;
   repeatBtn.style.display = 'none';
 
-  // Pastikan audio tetap lanjut kalau ada
-  if (music && music.paused) {
+ if (music) {
+    music.pause();
+    music.currentTime = 0;
+     setTimeout(() => {
     music.play().catch(err => console.warn("Gagal play musik saat ulangi:", err));
+  }, 2000); // Delay 2 detik (2000 ms)
   }
 
   typeWriter();
