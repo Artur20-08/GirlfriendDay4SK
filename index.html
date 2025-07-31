@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Aries 💌</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #121212, #3c2f2f);
+      color: #fff;
+      font-family: 'Quicksand', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2em 1em;
+      text-align: center;
+    }
+
+    .title {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #cdbba7;
+    }
+
+    .envelope {
+      width: 60vw;
+      max-width: 200px;
+      height: 45vw;
+      max-height: 150px;
+      background: maroon;
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05);
+    }
+
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: #6b1f1f;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+    }
+
+    .hint {
+      font-size: 0.9rem;
+      color: #ffdddd;
+      margin-top: 1em;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    .letter {
+      margin-top: 2em;
+      padding: 1.5em;
+      background: rgba(205, 187, 167, 0.1);
+      border-radius: 15px;
+      border: 1px solid #cdbba7;
+      width: 100%;
+      max-width: 600px;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      line-height: 1.6;
+      font-size: 1rem;
+      white-space: pre-line;
+      text-align: left;
+    }
+
+    .spark {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: orange;
+      border-radius: 50%;
+      animation: flicker 1s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0.2; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.5); }
+      100% { opacity: 0.2; transform: scale(1); }
+    }
+
+    iframe, audio {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .title {
+        font-size: 1.5rem;
+      }
+
+      .letter {
+        font-size: 0.95rem;
+        padding: 1em;
+            overflow-y: auto;
+    scroll-behavior: smooth;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">For My Fiery Aries </div>
+    <div class="title">Happy Girlfriend Day 2025 💘❤️</div>
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
+    </div>
+    <div class="hint">Klik amplop ini ya sayang ✨</div>
+    <div class="letter" id="letter"></div>
+    <button id="repeatBtn" style="display:none; margin-top: 1.5em; padding: 0.5em 1em; font-size: 1rem; border: none; border-radius: 10px; background-color: #cdbba7; color: #3c2f2f; cursor: pointer;">
+  Ulangi Lagi 💌
+</button>
+
+  </div>
+
+  <audio id="music" src="assets/Blue-Yung-Kai.mp3" preload="auto"></audio>
+
+  <script>
+    const envelope = document.getElementById('envelope');
+    const letter = document.getElementById('letter');
+    const music = document.getElementById('music');
+
+    const text = `Sayangku...
+
+Baru mulai nulis ini aja aku senyum sendiri... inget waktu itu—kamu bangunin aku jam 3 pagi. Suaramu lembut banget. Serius. Kayak peluk dari jauh, yang langsung bikin aku ngerasa dicintai, tanpa banyak kata.
+
+Dan kamu tuh... ya ampun, kamu tuh api banget. Energi kamu kadang sampe bikin aku bingung napas. Tapi entah kenapa, aku malah seneng diseret ke dunia kecilmu yang rame dan penuh warna. Aku? Taurus paling diem yang tiba-tiba bisa ketawa ngikutin kamu cari petualangan.
+
+Tapi sumpah ya... omelan kamu itu—yang manja—nggak ngerti lagi deh. Ngeselin dikit, iya. Tapi lucunya kebangetan. Aku sering nyari-nyari suaramu dalam diam, padahal kamu lagi nggak ada. Halah~
+
+Aku masih inget banget momen itu... pas kita debat dan aku mikir, “Ya udah deh, kelar nih.” Tapi kamu balik hubungin aku. Duh... aku beneran luluh, lho. Kamu punya cara nyentuh hatiku yang kamu sendiri mungkin nggak sadar.
+
+Kita juga sering pergi entah ke mana. Aku diajak, aku nggak ngerti ini tujuannya apa... tapi pas udah jalanin bareng kamu, selalu seru. Nggak ngerti kenapa. Tapi kamu bikin semua yang absurd jadi berkesan.
+
+Kalo soal cinta... kadang aku mikir, ini apinya kecil ya? Tapi pas kita main ML bareng... di situ aku ngerasa: kita kuat. Nggak perlu nyala terang. Yang penting kita berdua pegangin satu game yang sama. Satu arah. Satu tujuan.
+
+Aku pengen... cium kamu di kening, peluk lama banget... dan diem aja. Denger detakmu. Rasain kamu deket. Terus... kalo bisa... ya udah, diem di situ. Lama. Nggak usah ke mana-mana.
+
+Satu hal terakhir... Aku tau aku bukan cowok-cowok “wow” di TikTok. Aku belajar sendiri semuanya. Hidupku bentukku sendiri. Tapi kalau ada sesuatu yang kamu omongin... dari kamu langsung... dari isi kepala kamu sendiri... itu hal yang paling aku percaya di dunia ini.
+
+Kalau itu datang dari kamu, aku bakal denger. Tapi kalo dari orang lain? Lewat. Yang aku peduliin itu kamu, bukan suara di luar kita.
+
+Aku sayang kamu, dari semua sisi aku yang pernah ada. 💋
+
+— Taurus-mu yang keras kepala tapi cinta banget sama kamu ❤️
+Note: Terimakasih sudah sabar membaca ya, maaf jahil dikit`;
+
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        letter.innerHTML += text.charAt(i);
+         letter.scrollTop = letter.scrollHeight; // Auto-scroll ke bawah
+        let delay = 25;
+
+        if (text.charAt(i) === '.' || text.charAt(i) === '…') delay = 300;
+        else if (text.charAt(i) === ',' || text.charAt(i) === '—') delay = 150;
+        else if (text.charAt(i) === '\n') delay = 500;
+
+        i++;
+        setTimeout(typeWriter, delay);
+      }else {
+  // Tampilkan tombol setelah selesai mengetik
+  document.getElementById('repeatBtn').style.display = 'inline-block';
+}
+      
+    }
+
+   
+
+    envelope.addEventListener('click', () => {
+      letter.style.opacity = 1;
+      typeWriter();
+
+      if (music && typeof music.play === 'function') {
+        music.play().catch(err => console.warn("Gagal memutar audio:", err));
+      }
+
+      const rect = envelope.getBoundingClientRect();
+      for (let i = 0; i < 30; i++) {
+        const spark = document.createElement('div');
+        spark.className = 'spark';
+        spark.style.left = `${rect.left + Math.random() * rect.width}px`;
+        spark.style.top = `${rect.top + Math.random() * rect.height}px`;
+        spark.style.background = `hsl(${Math.random() * 30 + 10}, 100%, 60%)`;
+        document.body.appendChild(spark);
+        setTimeout(() => spark.remove(), 2000);
+      }
+    });
+
+     const repeatBtn = document.getElementById('repeatBtn');
+
+    repeatBtn.addEventListener('click', () => {
+  letter.innerHTML = '';
+  i = 0;
+  repeatBtn.style.display = 'none';
+
+  // Pastikan audio tetap lanjut kalau ada
+  if (music && music.paused) {
+    music.play().catch(err => console.warn("Gagal play musik saat ulangi:", err));
+  }
+
+  typeWriter();
+});
+
+  </script>
+</body>
+</html>
